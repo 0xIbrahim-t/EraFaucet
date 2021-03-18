@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Title -->
+        <title>Ropsten Faucet - Emanuele Civini</title>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="{{ url_for('static', filename='images/eth-logo.png') }}">
+
+        <!-- CSS -->
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">    
+        
+        <!-- Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Ethereum Ropsten Faucet</h1>
+            <h3>da Emanuele Civini</h3>
+            <br>
+            <br>
+            <h3>Inserisci l'indirizzo del tuo wallet</h3>
+            <form action="{{ url_for('send') }}" method="post">
+                <input type="text" id="address" name="address" placeholder="Per esempio 0x5abADa0Ef67C97D975797F34715f06D0f9c07F5a"><br><br>
+                <button>Ricevi ETH</button>
+            </form>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+                <h3>{{message}}</h3>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+
+    </body>
+</html>

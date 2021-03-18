@@ -1,0 +1,42 @@
+body {
+    color: white;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+}
+
+input {
+    width: 80%;
+}
+
+button {
+    background-color: white;
+    color: #716b94;
+    border: 0;
+    box-shadow: none;
+    border-radius: 0px;
+}
+
+.container {
+    border-radius: 25px;
+    background-color: #716b94;
+
+    margin: 0 auto;
+
+    padding: 25px;
+    width: 90%;
+    height: 25%;
+
+    text-align: center;
+}
+
+.flashes {
+    border-radius: 12px;
+    background-color: #716b94;
+
+    margin: 0 auto;
+
+    padding: 12px;
+    width: 50%;
+
+    text-align: center;
+}
