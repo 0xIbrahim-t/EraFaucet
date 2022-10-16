@@ -30,24 +30,24 @@ def send():
     if "address" in request.form:
         address = request.form.get("address")
         if address == "":
-            flash('Inserisci un indirizzo!')
+            flash('Please enter an address!')
             return redirect(url_for("index"))
     else:
-        flash('Inserisci un indirizzo!')
+        flash('Please enter an address!')
         return redirect(url_for("index"))
     
     timestamp = int(time.time())
     
     if address not in session or (timestamp - session[address]) >= 60 * 60 * 24:
-        txn = sendEther(address, 0.02)
+        txn = sendEther(address, 1)
 
         if txn != None:
             addTxnToSession(address, timestamp)
-            flash(Markup('Riceverai a breve i tuoi Ether.\nA questo link puoi trovare la transazione <a href="https://ropsten.etherscan.io/tx/' + str(txn)+ '">qui</a>.'))
+            flash(Markup('You will soon receive your ERA.\nA this link you can find the transaction <a href="https://testnet.erascan.io/tx/' + str(txn)+ '">here</a>.'))
         else:
-            flash("C'è stato un errore durante l'invio degli Ether.")
+            flash("There was an error sending the ERA.")
     else:
-        flash('Hai già richiesto i tuoi Ether.')
+        flash('You have already requested your ERA.')
     return redirect(url_for("index"))
 
 ###############################################################################
