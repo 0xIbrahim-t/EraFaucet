@@ -10,7 +10,7 @@ app = Flask(__name__)
 app.secret_key = os.getenv("FLASK_SECRETKEY")
 
 # Web3 
-w3 = Web3(Web3.HTTPProvider('https://ropsten.infura.io/v3/' + os.getenv("INFURA_ID")))
+w3 = Web3(Web3.HTTPProvider('https://testnet.erachain.io)
 walletPK = os.getenv("WALLET_PUBKEY")
 walletSK = os.getenv("WALLET_PRIVKEY")
 
